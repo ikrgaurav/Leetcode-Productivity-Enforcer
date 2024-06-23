@@ -33,7 +33,7 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({
     numSubmissions: 0,
     goal: 0,
-    whitelist: ["leetcode.com"],
+    whitelist: ["leetcode.com", "accounts.google.com", "extensions", "github.com", "drive.google.com"],
     goalAchieved: false,
     todayDateAfterChallenegeComplete: new Date().toDateString()
   });
