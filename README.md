@@ -9,8 +9,8 @@ Are you struggling to maintain a consistent LeetCode practice routine? The LeetC
 ### 🌟 Features
 
 - Set daily LeetCode problem-solving goals
-- Block access to specified websites until your goal is met
-- Track your progress and stay motivated
+- Block access to all websites (Except the whitelisted websites) until your goal is met
+- Track your progress and stay motivated (future update)
 - Customizable settings to fit your needs
 
 ## 🛠️ Installation
