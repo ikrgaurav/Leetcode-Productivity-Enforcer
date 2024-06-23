@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setGoalButton.addEventListener("click", () => {
         const goal = parseInt(goalInput.value, 10);
-        if (goal > 0) {
+        if (goal >= 0) {
             chrome.storage.local.set({ goal });
             chrome.runtime.sendMessage({ action: "updateGoal", data: goal });
         }
