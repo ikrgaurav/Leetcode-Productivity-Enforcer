@@ -39,10 +39,6 @@ You can customize the extension's behavior by modifying the `config.js` file:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgements
 
 - [LeetCode](https://leetcode.com/) for providing an excellent platform for coding practice
