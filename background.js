@@ -188,3 +188,29 @@ async function getLeetCodeData(query, variables = {}) {
 
   console.error("Failed to call API after 3 retries.");
 }
+
+chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+  if (request.action === "problemSolved") {
+      const { goal, currentProblems } = await chrome.storage.local.get(["goal", "currentProblems"]);
+      const problemsSolved = request.data;
+      const problemsLeft = goal - (problemsSolved - currentProblems);
+
+      if (problemsLeft <= 0) {
+          chrome.runtime.sendMessage({ action: "goalReached" });
+      } else {
+          chrome.storage.local.set({ problemsSolved });
+          chrome.runtime.sendMessage({ action: "updateProblemsSolved", data: problemsSolved });
+      }
+  }
+});
+
+// Fetch the current number of problems solved from Leetcode API
+async function getCurrentProblems() {
+  const response = await fetch('https://leetcode.com/api/problems/algorithms/');
+  const data = await response.json();
+  return data.num_solved;
+}
+
+
+
+
